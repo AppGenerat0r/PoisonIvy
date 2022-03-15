@@ -3,23 +3,23 @@ A google glass enterprise app
 
 
 
-#Digital compass
+# Digital compass
 
 
 
-#weather forecast data 
+# Weather forecast data 
 
 
 
-#View finder  
+# View finder  
 
 
 
-#clock/date data 
+# Clock/date data 
 
 
 
-#face recognition
+# Face recognition
 
 
-#Live calculator
+# Live calculator
