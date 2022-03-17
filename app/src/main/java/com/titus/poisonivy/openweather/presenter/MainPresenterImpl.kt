@@ -1,5 +1,8 @@
 package com.titus.poisonivy.openweather.presenter
 
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelStoreOwner
+import com.titus.poisonivy.ClockViewModel
 import com.titus.poisonivy.FullscreenActivity
 import com.titus.poisonivy.openweather.models.WeatherEntry
 import com.titus.poisonivy.openweather.networking.OpenWeatherMapWrapper
@@ -10,16 +13,16 @@ import com.titus.poisonivy.openweather.networking.OpenWeatherMapWrapper
  */
 class MainPresenterImpl: MainPresenter {
 
-    var view: FullscreenActivity
+    var clockViewModel: ClockViewModel
     var wrapper: OpenWeatherMapWrapper
 
-    constructor(view: FullscreenActivity) {
-        this.view = view
+    constructor(owner:ViewModelStoreOwner) {
+        clockViewModel = ViewModelProvider(owner)[ClockViewModel::class.java]
         wrapper = OpenWeatherMapWrapper(this)
     }
 
     override fun setWeatherData(weatherEntry: WeatherEntry) {
-        view.setWeatherData(weatherEntry)
+        clockViewModel.setWeatherData(weatherEntry)
     }
 
     override fun checkWeatherEntry(weatherEntry: WeatherEntry): WeatherEntry {

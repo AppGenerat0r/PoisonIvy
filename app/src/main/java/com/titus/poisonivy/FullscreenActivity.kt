@@ -191,9 +191,7 @@ class FullscreenActivity : AppCompatActivity() {
         hideHandler.postDelayed(hideRunnable, delayMillis.toLong())
     }
 
-    fun setWeatherData(weatherEntry: WeatherEntry) {
-        clockViewModel.Weather.value = weatherEntry;
-    }
+
 
     companion object {
         /**

@@ -22,7 +22,7 @@ class OpenWeatherMapWrapper : OpenWeatherApiInterface {
 
     val apiKey = "6c66057b32a8b75d0ffb56b9263adb25"
 
-    val unitType = "imperial"
+    val unitType = "standard"
 
     var presenter: MainPresenter
     var openWeatherApi: OpenWeatherApi
@@ -46,7 +46,7 @@ class OpenWeatherMapWrapper : OpenWeatherApiInterface {
     }
 
 
-    override fun getOpenWeatherMapRoot(lat:Double, lon:Double, presenter: MainPresenter) {
+     override suspend fun getOpenWeatherMapRoot(lat:Double, lon:Double, presenter: MainPresenter) {
         openWeatherApi.getWeatherFromApi( apiKey, lat,lon, object: Callback<OpenWeatherMapRoot> {
             override fun success(root: OpenWeatherMapRoot?, response: Response?) {
                 var weatherEntry : WeatherEntry?
